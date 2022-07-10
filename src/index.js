@@ -1,17 +1,52 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import Main from './component LoginForm/main-jsx';
+import Cart from './componets/Cart';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+// const root = document.getElementById('root');
+const formItem = React.createElement(
+	'form',
+	{
+		className: 'login-frm'
+	},
+	React.createElement(
+		'div',
+		{
+			className: 'login-frm-item'
+		},
+		React.createElement(
+			'label',
+			{
+				className: 'login-frm__email',
+				for: 'email'
+			},
+			'PassWord'
+		),
+		React.createElement(
+			'input',
+			{
+				className: 'login-frm__input',
+				id: 'email',
+				type: 'text'
+			},
+			null
+		)
+	)
 );
+// ReactDOM.render(formItem, root)
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+root.render(
+	<>
+		<Cart
+			title="Tan Luc"
+			desc="tam tam tan luc tam tam tan luc tam tam tan luc tam tam tan luc"
+		/>
+		<Cart
+			title="Tan Luc"
+			desc="tam tam tan luc tam tam tan luc tam tam tan luc tam tam tan luc"
+		/>
+		<Main />
+		{formItem}
+	</>
+);
